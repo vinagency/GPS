@@ -1,7 +1,4 @@
-GPS
-======
-
-This project contains a set of JavaScript plugins that allow you to integrate <a href="http://vinespring.com">VineSpring eCommerce</a> features into your website.
+#GPS
 
 ### Breakpoint situational awareness
 
