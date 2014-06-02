@@ -42,11 +42,13 @@ $.gps();
 	switch (window.gps){
 	case 'mobile':
 		// mobile
+		break;
 	case 'tablet':
 		// tablet
 		break;
 	case 'desktop':
 		// desktop
+				break;
 	}
 ```
 
