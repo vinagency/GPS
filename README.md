@@ -1,139 +1,139 @@
-<h1>GPS</h1>
+GPS
+======
 
-<h2>Breakpoint situational awareness</h2>
+This project contains a set of JavaScript plugins that allow you to integrate <a href="http://vinespring.com">VineSpring eCommerce</a> features into your website.
+
+### Breakpoint situational awareness
 
 Have you ever needed to know within JavaScript what CSS breakpoint we're in?  I know I have.  GPS tells you where you're at wherever you are.
 
-<p class="centered">
-<a href="http://vinagency.com/downloads/gps/demo.html" class="button">Demo</a> <a href="http://vinagency.com/downloads/gps/jquery.gps.js" class="button">Download</a>
-</p>
 
-<hr />
+<a href="http://vinagency.com/downloads/gps/demo.html" class="button">Demo</a>
 
 
-<h2 id="what-it-does" class="milestone">What it does</h2>
+
+## What it does
 
 GPS sets a global variable, so you can tell what the breakpoint state is.  It updates after page load and browser resize.
 
-<hr />
 
-<h2 id="use" class="milestone">Use</h2>
 
-<h3>1. Include the Script</h3>
+## Use
 
-<code>
-&laquo;script src="jquery.js"&raquo;&laquo;/script&raquo;
-&laquo;script src="jquery.gps.js"&raquo;&laquo;/script&raquo;
-</code>
+### 1. Include the script
 
-<h3>2. Instantiate the Script</h3>
+```javascript
+<script src="jquery.js"></script>
+<script src="jquery.gps.js"></script>
+```
 
-<code>
+### 2. Instantiate
+
+```javascript
 $.gps();
-</code>
+```
 
 
-<h3>3. Check GPS</h3>
+### 3. Check GPS
 
-<code>console.log( window.gps );</code>
+```javascript
+	// log state to console
+	console.log( window.gps );
+```
 
-<code>if ( window.gps == "mobile" ){
-//mobile
-} else if ( window.gps == "tablet" ){
-//tablet
-} else {
-//desktop
-}</code>
-
-
-<h3>4. Subscribe to GPS change event</h3>
-
-<code>
-$(document).bind("gps", function(e) {
-console.log( 'GPS changed to: '+window.gps );
-}
-</code>
-
-<hr />
+```javascript
+	switch (window.gps){
+	case 'mobile':
+		// mobile
+	case 'tablet':
+		// tablet
+		break;
+	case 'desktop':
+		// desktop
+	}
+```
 
 
-<h2 id="options" class="milestone">Options</h2>
+### 4. Subscribe to GPS change event
+
+```javascript
+	$(document).bind("gps", function(e) {
+		console.log( 'GPS changed to: '+window.gps );
+	}
+```
+
+
+## Options
 
 GPS takes one paramater, breakpoint, datatype object containing key/value pairs for breakpoint state and minimum width.  The value is the equivalent of the media query min-width, and comes from the browser visible screen width.
 
 The default settings:
 
-<code>
-var defaults = {
- 'mobile': 0,
- 'tablet': 640,
- 'small-desktop': 960,
- 'full-desktop': 1140
-}
-$.gps({ 'breakpoints': defaults });
-</code>
+```javascript
+	var defaults = {
+	 'mobile': 0,
+	 'tablet': 640,
+	 'small-desktop': 960,
+	 'full-desktop': 1140
+	}
+	$.gps({ 'breakpoints': defaults });
+```
 
 
 
 You can specify your own custom breakpoint parameters.
 
-<code>
-var custom_breakpoints = {
- 'tamagotchi': 0,
- 'mobile': 100,
- 'tablet': 480,
- 'desktop': 960
-}
-$.gps({ 'breakpoints': custom_breakpoints });
-</code>
+```javascript
+	var custom_breakpoints = {
+	 'tamagotchi': 0,
+	 'mobile': 100,
+	 'tablet': 480,
+	 'desktop': 960
+	}
+	$.gps({ 'breakpoints': custom_breakpoints });
+```
 
 
 In this example  0-639 registers as 'mobile', 640-959 as 'tablet', etc.
 
-<code>{ 'mobile': 0,  'tablet': 640, 'desktop': 960 }</code>
+```
+	javascript{ 'mobile': 0,  'tablet': 640, 'desktop': 960 }
+```
 
 
-<h3>Event</h3>
+### Event
 
-<code>
-//bind to event
-$(document).bind("gps", function(e) {
-//check state
-   if (window.gps == 'mobile'){
-     //state is mobile
-   }
-});
-</code>
+```javascript
+	//bind to event
+	$(document).bind("gps", function(e) {
+	//check state
+	   if (window.gps == 'mobile'){
+	     //state is mobile
+	   }
+	});
+```
 
 
 
 <hr />
 
-<h2 id="notes" class="milestone">Notes</h2>
+## Notes
 
-<h3>Viewport</h3>
+### Viewport
 
 You'll need to add the meta viewport tag for mobile devices to respond correctly without resizing the page.
 
-<code>
-&laquo;meta name="viewport" content="width=device-width, initial-scale=1" /&raquo;
-</code>
+```javascript
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+```
 
-<h3>Dependencies</h3>
+### Dependencies
 
-<p class="centered">
 <a href="http://jquery.com/" target="_blank">jQuery</a><br />
 <a href="http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/" target="_blank">SmartResize</a> (included)<br />
-</p>
-
-<h3>License</h3>
-
-<p class="centered"><a href="https://www.gnu.org/copyleft/gpl.html" target="_blank">GPL</a></p>
-
-<hr />
 
 
-<p class="centered">
-<a href="http://vinagency.com/downloads/gps/demo.html" class="button">Demo</a> <a href="http://vinagency.com/downloads/gps/jquery.gps.js" class="button">Download</a>
-</p>
+### License
+
+<a href="https://www.gnu.org/copyleft/gpl.html" target="_blank">GPL</a>
 
